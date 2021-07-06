@@ -7,20 +7,35 @@ public class Boss : EnemyBase
     enum ActionPattern
     {
         stay,
+        Move,
         bodyBlow,
         jumpAttack,
+        Dead
     }
+
+  
+
+
+    WaitForSeconds actionSetWait = new WaitForSeconds(0.5f);
+    WaitForSeconds attackWait = new WaitForSeconds(1.7f);
 
     int state = 0;
 
-    int tmp = 0;
+    int stateRandom = 0;
 
     Animator animator;
 
     GameObject player;
+    testDamege testDamege;
 
     //攻撃をわかりやすくするための色変更用
     Renderer renderer;
+
+    //衝撃波の見た目（仮）
+    [SerializeField]
+    GameObject syougekiha;
+
+    bool isBodyBlow = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,15 +43,16 @@ public class Boss : EnemyBase
         renderer = GetComponent<Renderer>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
+        testDamege = player.GetComponent<testDamege>();
  
        StartCoroutine(ActionSet());
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
     }
+
+
 
     //行動を決める
     IEnumerator ActionSet ()
@@ -49,31 +65,25 @@ public class Boss : EnemyBase
         animator.SetInteger("State", 0);
         renderer.material.color = Color.black;
         //待つ
-        yield return new WaitForSeconds(0.5f);
+        yield return actionSetWait;
 
         //ランダムで行動を決める
-        tmp =  Random.Range(1, 100);
-
-        Debug.Log(state);
+        stateRandom =  Random.Range(1, 100);
         //行動を行う
-        if (0 <= tmp && tmp < 20)
+        if (0 <= stateRandom && stateRandom < 20)
         {
             StartCoroutine(Stay());
-            state = (int)ActionPattern.stay;
-            renderer.material.color = Color.black;
+            
         }
-        else if(20 <= tmp && tmp < 60 )
+        else if(20 <= stateRandom && stateRandom < 60 )
         {
             StartCoroutine(BodyBlow());
-            state = (int)ActionPattern.bodyBlow;
-
-            renderer.material.color = Color.blue;
+            
         }
-        else if(60 <= tmp && tmp <= 100)
+        else if(60 <= stateRandom && stateRandom <= 100)
         {
             StartCoroutine(JumpAtteck());
-            state = (int)ActionPattern.jumpAttack;
-            renderer.material.color = Color.red;
+            
         }
         //アニメーターに状態を渡す
         animator.SetInteger("State", state);
@@ -84,7 +94,13 @@ public class Boss : EnemyBase
     public override void Dead()
     {
         renderer.material.color = Color.black;
-        animator.SetInteger("State", 0);
+        state = (int)ActionPattern.Dead;
+        animator.SetInteger("State", state);
+        Invoke("InvokeBaseDead", 1);
+    }
+
+    void InvokeBaseDead ()
+    {
         base.Dead();
     }
 
@@ -107,7 +123,8 @@ public class Boss : EnemyBase
     #region BossAction
     IEnumerator Stay ()
     {
-        Debug.Log("Stay");
+        state = (int)ActionPattern.stay;
+        renderer.material.color = Color.black;
         yield return new WaitForSeconds(0.5f);
         PlayerLook();
         StartCoroutine(ActionSet());
@@ -115,21 +132,77 @@ public class Boss : EnemyBase
     }
     IEnumerator BodyBlow ()
     {
-        Debug.Log("BodyBlow");
-        yield return new WaitForSeconds(1.7f);
+        state = (int)ActionPattern.bodyBlow;
+
+        renderer.material.color = Color.blue;
+        isBodyBlow = true;
+        Invoke("BodyBlowStop",0.15f);
+        yield return attackWait;
         PlayerLook();
         StartCoroutine(ActionSet());
         yield break;
     }
     IEnumerator JumpAtteck ()
     {
-        Debug.Log("JumpAtteck");
-        yield return new WaitForSeconds(1.7f);
+        state = (int)ActionPattern.jumpAttack;
+        renderer.material.color = Color.red;
+        StartCoroutine(JumpAttackDamege());
+        yield return attackWait;
         PlayerLook();
         StartCoroutine(ActionSet());
+            
         yield break;
     }
-    #endregion 
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position - new Vector3(0f, 0.5f, 0f), new Vector3(6, 1, 2));
+
+    }
+        
+    IEnumerator JumpAttackDamege()
+    {
+        yield return new WaitForSeconds(0.75f);
+        bool ishit = false;
+        RaycastHit[] hit;
+        int attackframe = 0;
+        syougekiha.SetActive(true);
+        while(attackframe < 250)
+        {
+            hit = Physics.BoxCastAll(transform.position - new Vector3(0f, 0.5f, 0f), new Vector3(3, 1, 2), -transform.up, Quaternion.identity,LayerMask.GetMask("Player"));
+           if (!ishit)
+           {
+                testDamege.Damege();
+                ishit = true;
+                break;
+           }
+            
+            attackframe++;
+            yield return null;
+        }
+        syougekiha.SetActive(false);
+        yield break;
+        
+    }
+    void BodyBlowStop ()
+    {
+        isBodyBlow = false;
+    }
+    #endregion
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(isBodyBlow && collision.gameObject.CompareTag("Player"))
+        {
+            testDamege.Damege();
+        }
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            testDamege.Damege();
+        }
+    }
+
 
     //ボスの体力確認用
     private void OnGUI()

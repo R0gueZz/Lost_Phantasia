@@ -16,10 +16,20 @@ public class testDamege : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && enemyBase != null)  
         {
             Debug.Log("Damege");
             enemyBase.Damege(1);
         }
+        if (Input.GetKeyDown(KeyCode.Space) && enemyBase != null)
+        {
+            enemyBase.Dead();
+        }
+
+    }
+
+    public void Damege ()
+    {
+        Debug.Log("Damege");
     }
 }

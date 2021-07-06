@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyBase : MonoBehaviour
 {
     [SerializeField]
-    protected int Hp = 0;
+    protected float Hp = 0;
 
     //“®‚¯‚é‚©‚Ç‚¤‚©‚Ìİ’è true‚È‚ç“®‚¯‚é
     public bool IsMove = true;
@@ -12,11 +12,14 @@ public class EnemyBase : MonoBehaviour
     //ˆø”‚Ìdamege‚Í—^‚¦‚éƒ_ƒ[ƒW
     virtual public void Damege(int damege)
     {
-        Hp -= damege;
-        if (Hp <= 0)
+        if(Hp > 0)
+        {
+            Hp -= damege;
+        }
+        if(0 >= Hp)
         {
             IsMove = false;
-            Invoke("Dead",1);
+            Dead();
         }
     }
 
