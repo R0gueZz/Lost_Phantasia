@@ -12,11 +12,11 @@ public class Boss : EnemyBase
         jumpAttack,
         Dead
     }
-
+    Rigidbody rb;
   
 
 
-    WaitForSeconds actionSetWait = new WaitForSeconds(0.5f);
+    WaitForSeconds actionSetWait = new WaitForSeconds(1f);
     WaitForSeconds attackWait = new WaitForSeconds(1.7f);
 
     int state = 0;
@@ -30,11 +30,6 @@ public class Boss : EnemyBase
 
     //攻撃をわかりやすくするための色変更用
     Renderer renderer;
-
-    //衝撃波の見た目（仮）
-    [SerializeField]
-    GameObject syougekiha;
-
     bool isBodyBlow = false;
 
     // Start is called before the first frame update
@@ -42,14 +37,17 @@ public class Boss : EnemyBase
     {
         renderer = GetComponent<Renderer>();
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
         testDamege = player.GetComponent<testDamege>();
- 
-       StartCoroutine(ActionSet());
+
+        //StartCoroutine(ActionSet());
+        StartCoroutine(Move());
     }
 
     private void Update()
     {
+        
     }
 
 
@@ -57,7 +55,6 @@ public class Boss : EnemyBase
     //行動を決める
     IEnumerator ActionSet ()
     {
-
         //IsMoveがfalseの時動かない
         yield return new WaitUntil(()=> IsMove);
         //一旦待機状態にする
@@ -66,14 +63,23 @@ public class Boss : EnemyBase
         renderer.material.color = Color.black;
         //待つ
         yield return actionSetWait;
+        if (transform.position.x - player.transform.position.x >= 5 || transform.position.x - player.transform.position.x <= -5)
+        {
+            StartCoroutine(Move());
+            yield break;
+        }
 
         //ランダムで行動を決める
         stateRandom =  Random.Range(1, 100);
         //行動を行う
-        if (0 <= stateRandom && stateRandom < 20)
+        if (0 <= stateRandom && stateRandom < 10)
         {
             StartCoroutine(Stay());
             
+        }
+        if(10 <= stateRandom && stateRandom < 20)
+        {
+            StartCoroutine(Move());
         }
         else if(20 <= stateRandom && stateRandom < 60 )
         {
@@ -130,10 +136,33 @@ public class Boss : EnemyBase
         StartCoroutine(ActionSet());
         yield break;
     }
+    IEnumerator Move ()
+    {
+        PlayerLook();
+        state = (int)ActionPattern.Move;
+        renderer.material.color = Color.green;
+        for(int i = 0; i <= 1500 && (transform.position.x - player.transform.position.x >= 2 || transform.position.x - player.transform.position.x <= -2); i++)
+        {
+            rb.isKinematic = false;
+            rb.constraints = (RigidbodyConstraints)124;
+            rb.MovePosition(transform.position - new Vector3(transform.position.x - player.transform.position.x, 0, 0).normalized * 0.1f);
+            yield return null;
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+            rb.isKinematic = true;
+            if(i % 20 == 0)
+            {
+                PlayerLook();
+            }
+        }
+        PlayerLook();
+        StartCoroutine(ActionSet());
+        yield break;
+    }
+
     IEnumerator BodyBlow ()
     {
         state = (int)ActionPattern.bodyBlow;
-
+        rb.constraints = (RigidbodyConstraints)124;
         renderer.material.color = Color.blue;
         isBodyBlow = true;
         Invoke("BodyBlowStop",0.15f);
@@ -146,11 +175,13 @@ public class Boss : EnemyBase
     {
         state = (int)ActionPattern.jumpAttack;
         renderer.material.color = Color.red;
+        rb.constraints = (RigidbodyConstraints)122;
         StartCoroutine(JumpAttackDamege());
         yield return attackWait;
         PlayerLook();
         StartCoroutine(ActionSet());
-            
+        rb.constraints = (RigidbodyConstraints)126;
+
         yield break;
     }
 
@@ -161,28 +192,32 @@ public class Boss : EnemyBase
         Gizmos.DrawWireCube(transform.position - new Vector3(0f, 0.5f, 0f), new Vector3(6, 1, 2));
 
     }
-        
+
+
+    bool ishit = false;
+    RaycastHit[] hit;
+    int attackframe = 0;
     IEnumerator JumpAttackDamege()
     {
-        yield return new WaitForSeconds(0.75f);
-        bool ishit = false;
-        RaycastHit[] hit;
-        int attackframe = 0;
-        syougekiha.SetActive(true);
-        while(attackframe < 250)
+        ishit = false;   
+        yield return new WaitForSeconds(1.5f);
+        for(attackframe = 0; attackframe < 200;attackframe++)
         {
-            hit = Physics.BoxCastAll(transform.position - new Vector3(0f, 0.5f, 0f), new Vector3(3, 1, 2), -transform.up, Quaternion.identity,LayerMask.GetMask("Player"));
-           if (!ishit)
-           {
-                testDamege.Damege();
-                ishit = true;
-                break;
-           }
+            Debug.Log("aa");
+            hit = Physics.BoxCastAll(transform.position - new Vector3(0f, 0.5f, 0f), new Vector3(3, 1, 2), -transform.up, Quaternion.identity, LayerMask.GetMask("Player"));
+            foreach(var i in hit)
+            {
+                if(i.collider.gameObject.CompareTag("Player"))
+                {
+                    testDamege.Damege();
+                    yield break;
+                }
+            }
             
             attackframe++;
             yield return null;
         }
-        syougekiha.SetActive(false);
+
         yield break;
         
     }
@@ -193,10 +228,13 @@ public class Boss : EnemyBase
     #endregion
     private void OnCollisionEnter(Collision collision)
     {
+          //タックル中だけ変える
         if(isBodyBlow && collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("BodyBlow");
             testDamege.Damege();
         }
+        //タックル中ではないときの接触ダメージ
         if(collision.gameObject.CompareTag("Player"))
         {
             testDamege.Damege();
