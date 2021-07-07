@@ -12,6 +12,7 @@ public class EnemyBase : MonoBehaviour
     //ˆø”‚Ìdamege‚Í—^‚¦‚éƒ_ƒ[ƒW
     virtual public void Damege(int damege)
     {
+       
         if(Hp > 0)
         {
             Hp -= damege;
