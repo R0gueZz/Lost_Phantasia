@@ -18,6 +18,7 @@ public class testDamege : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return) && enemyBase != null)  
         {
+            Debug.Log("Damege");
             enemyBase.Damege(1);
         }
         if (Input.GetKeyDown(KeyCode.Space) && enemyBase != null)
@@ -29,6 +30,6 @@ public class testDamege : MonoBehaviour
 
     public void Damege ()
     {
-        Debug.Log("PlayerDamege");
+        Debug.Log("Damege");
     }
 }
