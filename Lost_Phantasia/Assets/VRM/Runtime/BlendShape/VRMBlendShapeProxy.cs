@@ -11,6 +11,9 @@ namespace VRM
         [SerializeField]
         public BlendShapeAvatar BlendShapeAvatar;
 
+        bool blinkEnabled = true;
+        bool blinking = false;
+
         public void OnImported(VRMImporterContext context)
         {
             throw new NotImplementedException();
@@ -50,12 +53,22 @@ namespace VRM
             }
         }
 
-        /// <summary>
-        /// AccumulateValue. After, Should call Apply
-        /// </summary>
-        /// <param name="key"></param>
-        /// <param name="value"></param>
-        public void AccumulateValue(BlendShapeKey key, float value)
+        public void ChangeFace(BlendShapePreset preset = BlendShapePreset.Neutral, bool blink = false)
+        {
+            blinkEnabled = blink;
+            if (!blink)
+            {
+                StopCoroutine("AutoBlink"); 
+                blinking = false;
+            }
+        }
+
+            /// <summary>
+            /// AccumulateValue. After, Should call Apply
+            /// </summary>
+            /// <param name="key"></param>
+            /// <param name="value"></param>
+            public void AccumulateValue(BlendShapeKey key, float value)
         {
             if (m_merger != null)
             {
