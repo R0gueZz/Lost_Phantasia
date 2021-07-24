@@ -5,33 +5,22 @@ public class EnemyBase : MonoBehaviour
     [SerializeField]
     protected float Hp = 0;
 
-    //“®‚¯‚é‚©‚Ç‚¤‚©‚ÌÝ’è true‚È‚ç“®‚¯‚é
-    public bool IsMove = true;
+    protected bool ismove = true;
 
-
-    //ˆø”‚Ìdamege‚Í—^‚¦‚éƒ_ƒ[ƒW
-    virtual public void Damege(int damege)
+    virtual public void Damege (float damege )
     {
-       
-        if(Hp > 0)
+        Debug.Log("BossDamege");
+        Hp -= damege;
+        if(Hp <= 0)
         {
-            Hp -= damege;
-        }
-        if(0 >= Hp)
-        {
-            IsMove = false;
             Dead();
         }
+        return;
     }
-
     virtual public void Dead()
     {
-        Animator animator;
-        if (animator = GetComponent<Animator>())
-        {
-            animator.SetBool("IsDead", true);
-        }
-        Debug.Log("Dead");
-        Destroy(gameObject);
+        ismove = true;
+        gameObject.SetActive(false);
+        Debug.Log("dead");
     }
 }

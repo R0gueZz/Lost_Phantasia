@@ -7,10 +7,12 @@ public class testDamege : MonoBehaviour
     [SerializeField]
     EnemyBase enemyBase;
 
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -22,13 +24,19 @@ public class testDamege : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) && enemyBase != null)
         {
-            enemyBase.Dead();
+           // enemyBase.Dead();
         }
+        
+    }
 
+    void aaa()
+    {
+        rb.AddForce(-10, 0, 0,ForceMode.Impulse);
     }
 
     public void Damege ()
     {
         Debug.Log("PlayerDamege");
     }
+    
 }
