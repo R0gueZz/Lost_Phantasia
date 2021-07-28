@@ -13,6 +13,9 @@ public class Player_Move : MonoBehaviour
     [SerializeField]
     float jumpForce;
 
+    [SerializeField]
+    float avoid_force;
+
     //DurarionÇÃéûä‘
     [SerializeField]
     [Min(0)]
@@ -21,6 +24,7 @@ public class Player_Move : MonoBehaviour
     float move_SlideTimer = 0f;
 
     private bool do_move;
+    static public bool avoid = true;
     static public bool grounded;
     // Start is called before the first frame update
     void Start()
@@ -32,6 +36,7 @@ public class Player_Move : MonoBehaviour
     private void Update()
     {
         Jump();
+        Avoidance();
     }
     private void FixedUpdate()
     {
@@ -42,7 +47,7 @@ public class Player_Move : MonoBehaviour
     //à⁄ìÆ
     void Move()
     {
-        if (!do_move)
+        if (!do_move|!avoid)
         {
             move_SlideTimer = 0f;
             return;
@@ -53,12 +58,13 @@ public class Player_Move : MonoBehaviour
         if (target.sqrMagnitude > 0)
         {
             rb.velocity = new Vector3(target.x * speed, rb.velocity.y, 0);
-            anim.SetFloat("Normal_Blend", target.magnitude);
+            anim.SetFloat("Sword_Blend", target.magnitude);
+
             transform.rotation = Quaternion.LookRotation(target);
         }
         else
         {
-            anim.SetFloat("Normal_Blend", 0);
+            anim.SetFloat("Sword_Blend", 0);
         }
     }
 
@@ -69,11 +75,29 @@ public class Player_Move : MonoBehaviour
         {
             return;
         }
-        else if (grounded && Input.GetKeyDown(KeyCode.Space))
+        else if (grounded && Input.GetKeyDown(KeyCode.Space)||Input.GetButtonDown("Jump")&& grounded)
         {
             this.rb.AddForce(transform.up * this.jumpForce,ForceMode.Impulse);
             anim.SetBool("Jump", true);
             grounded = false;
+        }
+    }
+
+    //âÒî
+    void Avoidance()
+    {
+        if(!do_move)
+        {
+            return;
+        }
+        else if (avoid && grounded && Input.GetKeyDown(KeyCode.LeftShift) 
+            ||avoid && grounded && Input.GetButtonDown("button1"))
+        {
+            rb.velocity = Vector3.zero;
+            Vector3 avoidance = gameObject.transform.rotation * new Vector3(0, 0, avoid_force);
+            rb.AddForce(avoidance, ForceMode.Impulse);
+            anim.SetBool("Avoidance",true);
+            avoid = false;
         }
     }
 
@@ -84,7 +108,7 @@ public class Player_Move : MonoBehaviour
            anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") ||
            anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
         {
-            anim.SetFloat("Normal_Blend", 0);
+            anim.SetFloat("Sword_Blend", 0);
             do_move = false;
         }
         else
@@ -93,6 +117,11 @@ public class Player_Move : MonoBehaviour
         }
     }
 
+    void Avoid_end()
+    {
+        anim.SetBool("Avoidance", false);
+        avoid = true;
+    }
     #region ê⁄ínîªíË
     private void OnCollisionEnter(Collision other)
     {

@@ -825,6 +825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4.5
   jumpForce: 10
+  avoid_force: 8
   slideDuration: 0.15
 --- !u!136 &668254466
 CapsuleCollider:

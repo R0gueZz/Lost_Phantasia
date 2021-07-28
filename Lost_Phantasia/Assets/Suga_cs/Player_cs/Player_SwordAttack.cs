@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Attack : MonoBehaviour
+public class Player_SwordAttack : MonoBehaviour
 {
     Animator anim;
     Rigidbody rb;
@@ -26,24 +26,14 @@ public class Player_Attack : MonoBehaviour
     void Update()
     {
         Sword_Attack();
-        Gun_Attack();
     }
 
     //Œ•UŒ‚
     void Sword_Attack()
     {
-        if (Player_Move.grounded && Input.GetMouseButtonDown(0))
+        if (Player_Move.grounded && Input.GetMouseButtonDown(0) || Player_Move.grounded && Input.GetButtonDown("Fire1"))
         {
             anim.SetTrigger("Attack");
-        }
-    }
-
-    //eUŒ‚
-    void Gun_Attack()
-    {
-        if(Input.GetMouseButtonDown(1))
-        {
-            //‰EƒNƒŠƒbƒN‚ÅUŒ‚
         }
     }
 
