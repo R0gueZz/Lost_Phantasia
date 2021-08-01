@@ -11,6 +11,9 @@ public class Player_Move : MonoBehaviour
     float speed;
 
     [SerializeField]
+    float dashSpeed;
+
+    [SerializeField]
     float jumpForce;
 
     [SerializeField]
@@ -26,6 +29,7 @@ public class Player_Move : MonoBehaviour
     private bool do_move;
     static public bool avoid = true;
     static public bool grounded;
+    static public bool rolling = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,16 +59,24 @@ public class Player_Move : MonoBehaviour
         Vector3 target = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
         target.x = Mathf.Lerp(0, target.x, move_SlideTimer);
         move_SlideTimer += Time.deltaTime / slideDuration;
-        if (target.sqrMagnitude > 0)
+        if(target.sqrMagnitude >0 && Input.GetButton("LB")||target.sqrMagnitude >0 && Input.GetKey(KeyCode.LeftControl))
+        {
+            rb.velocity = new Vector3(target.x * dashSpeed,rb.velocity.y,0);
+            anim.SetFloat("Sword_Blend", 2);
+            transform.rotation = Quaternion.LookRotation(target);
+            rolling = true;
+        }
+        else if (target.sqrMagnitude > 0)
         {
             rb.velocity = new Vector3(target.x * speed, rb.velocity.y, 0);
             anim.SetFloat("Sword_Blend", target.magnitude);
-
+            rolling = false;
             transform.rotation = Quaternion.LookRotation(target);
         }
         else
         {
             anim.SetFloat("Sword_Blend", 0);
+            rolling = false;
         }
     }
 
@@ -91,11 +103,10 @@ public class Player_Move : MonoBehaviour
             return;
         }
         else if (avoid && grounded && Input.GetKeyDown(KeyCode.LeftShift) 
-            ||avoid && grounded && Input.GetButtonDown("button1"))
+            ||avoid && grounded && Input.GetButtonDown("RB"))
         {
-            rb.velocity = Vector3.zero;
-            Vector3 avoidance = gameObject.transform.rotation * new Vector3(0, 0, avoid_force);
-            rb.AddForce(avoidance, ForceMode.Impulse);
+            rolling = true;
+            anim.SetFloat("Sword_Blend", 0);
             anim.SetBool("Avoidance",true);
             avoid = false;
         }
@@ -117,10 +128,16 @@ public class Player_Move : MonoBehaviour
         }
     }
 
-    void Avoid_end()
+    void Avoid_Start()
     {
-        anim.SetBool("Avoidance", false);
-        avoid = true;
+        rb.velocity = Vector3.zero;
+        Vector3 avoidance = gameObject.transform.rotation * new Vector3(0, 0, avoid_force);
+        rb.AddForce(avoidance, ForceMode.Impulse);
+    }
+
+    void invin_end()
+    {
+        rolling = false;
     }
     #region ê⁄ínîªíË
     private void OnCollisionEnter(Collision other)
