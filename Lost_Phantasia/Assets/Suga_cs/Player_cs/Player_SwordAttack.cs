@@ -31,7 +31,8 @@ public class Player_SwordAttack : MonoBehaviour
     //åïçUåÇ
     void Sword_Attack()
     {
-        if (Player_Move.grounded && Input.GetMouseButtonDown(0) || Player_Move.grounded && Input.GetButtonDown("Fire1"))
+        if (Player_Move.grounded && Input.GetMouseButtonDown(0) && !Player_Move.rolling || 
+            Player_Move.grounded && Input.GetButtonDown("Fire1") && !Player_Move.rolling)
         {
             anim.SetTrigger("Attack");
         }

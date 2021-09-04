@@ -26,10 +26,16 @@ public class Player_Move : MonoBehaviour
 
     float move_SlideTimer = 0f;
 
+    [SerializeField]
+    float lerpDuration;
+
+    float lerpProb = 0;
+
     private bool do_move;
     static public bool avoid = true;
     static public bool grounded;
     static public bool rolling = false;
+    static public bool dash = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,29 +64,44 @@ public class Player_Move : MonoBehaviour
             move_SlideTimer = 0f;
             return;
         }
-        //移動の補間
+        
         Vector3 target = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+
+        //補間
         target.x = Mathf.Lerp(0, target.x, move_SlideTimer);
         move_SlideTimer += Time.deltaTime / slideDuration;
-　　　　//ダッシュ
-        if(target.sqrMagnitude >0 && Input.GetButton("LB")||target.sqrMagnitude >0 && Input.GetKey(KeyCode.LeftShift))
+
+        float value = Mathf.Lerp(target.magnitude, 2, lerpProb);
+        
+
+        //ダッシュ
+        if (target.sqrMagnitude >0 && Input.GetButton("LB")||target.sqrMagnitude >0 && Input.GetKey(KeyCode.LeftShift))
         {
+            lerpProb += Time.deltaTime / lerpDuration;
+            lerpProb = Mathf.Clamp(lerpProb, 0, 1);
+
             rb.velocity = new Vector3(target.x * dashSpeed,rb.velocity.y,0);
-            anim.SetFloat("Sword_Blend", 2);
+            anim.SetFloat("Sword_Blend",value);
             transform.rotation = Quaternion.LookRotation(target);
-            rolling = true;
+            dash = true;
+            rolling = false;
         }
         //通常
         else if (target.sqrMagnitude > 0)
         {
+            lerpProb -= Time.deltaTime / lerpDuration;
+            lerpProb = Mathf.Clamp(lerpProb, 0, 1);
+
             rb.velocity = new Vector3(target.x * speed, rb.velocity.y, 0);
-            anim.SetFloat("Sword_Blend", target.magnitude);
+            anim.SetFloat("Sword_Blend", value);
+            dash = false;
             rolling = false;
             transform.rotation = Quaternion.LookRotation(target);
         }
         else
         {
-            anim.SetFloat("Sword_Blend", target.magnitude * 0.95f * Time.deltaTime);
+            anim.SetFloat("Sword_Blend", target.magnitude * 0.95f );
+            dash = false;
             rolling = false;
         }
     }
@@ -92,8 +113,8 @@ public class Player_Move : MonoBehaviour
         {
             return;
         }
-        else if (grounded && Input.GetKeyDown(KeyCode.Space)
-            ||Input.GetButtonDown("Jump")&& grounded)
+        else if (grounded && Input.GetKeyDown(KeyCode.Space) && !rolling
+            ||Input.GetButtonDown("Jump")&& grounded && !rolling)
         {
             this.rb.AddForce(transform.up * this.jumpForce,ForceMode.Impulse);
             anim.SetBool("Jump", true);
@@ -112,6 +133,7 @@ public class Player_Move : MonoBehaviour
             ||avoid && grounded && Input.GetButtonDown("RB"))
         {
             rolling = true;
+            dash = false;
             anim.SetFloat("Sword_Blend", 0);
             anim.SetBool("Avoidance",true);
             avoid = false;

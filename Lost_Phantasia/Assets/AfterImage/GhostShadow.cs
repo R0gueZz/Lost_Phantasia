@@ -39,7 +39,7 @@ public class GhostShadow : MonoBehaviour
     void Update()
     {
 
-        if(Player_Move.rolling)
+        if(Player_Move.rolling || Player_Move.dash)
         {
         //The afterimage is created when the character is displaced, otherwise it is not created
         if (lastPos == this.transform.position)
