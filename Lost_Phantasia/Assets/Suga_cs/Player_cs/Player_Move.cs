@@ -45,6 +45,7 @@ public class Player_Move : MonoBehaviour
 
     private void Update()
     {
+        Effecter();
         Jump();
         Avoidance();
     }
@@ -55,12 +56,22 @@ public class Player_Move : MonoBehaviour
         Move();
     }
 
+    //エフェクト管理
+    void Effecter()
+    {
+        if(!do_move)
+        {
+            dash = false;
+            rolling = false;
+        }
+    }
+
     //移動
     void Move()
     {
         //移動拒否
         if (!do_move|!avoid)
-        {
+        { 
             move_SlideTimer = 0f;
             return;
         }
@@ -69,7 +80,8 @@ public class Player_Move : MonoBehaviour
 
         //補間
         target.x = Mathf.Lerp(0, target.x, move_SlideTimer);
-        move_SlideTimer += Time.deltaTime / slideDuration;
+
+        move_SlideTimer += Time.deltaTime / move_SlideTimer;
 
         float value = Mathf.Lerp(target.magnitude, 2, lerpProb);
         
