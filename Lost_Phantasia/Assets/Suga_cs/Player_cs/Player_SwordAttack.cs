@@ -7,6 +7,7 @@ public class Player_SwordAttack : MonoBehaviour
     Animator anim;
     Rigidbody rb;
 
+    [Header("攻撃エフェクト配列")]
     [SerializeField]
     ParticleSystem[] slash_Effects;
 
@@ -14,6 +15,7 @@ public class Player_SwordAttack : MonoBehaviour
     private bool nowAttack = false;
 
     //アタック時の移動
+    [Header("攻撃時の移動力")]
     [SerializeField]
     float[] Attack_Speed;
     // Start is called before the first frame update
@@ -81,6 +83,13 @@ public class Player_SwordAttack : MonoBehaviour
         Vector3 force = gameObject.transform.rotation * new Vector3(0, 0, Attack_Speed[2]);
         rb.AddForce(force, ForceMode.Impulse);
     }
+
+    void Attack_Start4()
+    {
+        nowAttack = true;
+        Vector3 force = gameObject.transform.rotation * new Vector3(0, 0, Attack_Speed[3]);
+        rb.AddForce(force, ForceMode.Impulse);
+    }
     #endregion
 
     //アタック終了
@@ -96,6 +105,11 @@ public class Player_SwordAttack : MonoBehaviour
     }
 
     void Attack_End3()
+    {
+        nowAttack = false;
+    }
+
+    void Attack_End4()
     {
         nowAttack = false;
     }
@@ -116,6 +130,11 @@ public class Player_SwordAttack : MonoBehaviour
     void Effect_Start3()
     {
         slash_Effects[2].Play();
+    }
+
+    void Effect_Start4()
+    {
+        slash_Effects[3].Play();
     }
     #endregion
 }

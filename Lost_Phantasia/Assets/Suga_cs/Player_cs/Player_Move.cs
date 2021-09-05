@@ -2,35 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Move : MonoBehaviour
+public class Player_Move : Player_Status
 {
     Rigidbody rb;
     Animator anim;
 
+    [Header("通常時のスピード")]
     [SerializeField]
     float speed;
 
+    [Header("ダッシュ時のスピード")]
     [SerializeField]
     float dashSpeed;
 
+    [Header("ジャンプの力")]
     [SerializeField]
     float jumpForce;
 
+    [Header("回避の力")]
     [SerializeField]
     float avoid_force;
 
     //Durarionの時間
+    [Header("攻撃終了から走り出す時の補間")]
     [SerializeField]
     [Min(0)]
     float slideDuration;
 
     float move_SlideTimer = 0f;
 
+    [Header("ダッシュアニメーションの補間")]
     [SerializeField]
     float lerpDuration;
 
-    float lerpProb = 0;
+    float lerpProb = 0f;
 
+    //条件処理用変数
     private bool do_move;
     static public bool avoid = true;
     static public bool grounded;
@@ -84,7 +91,6 @@ public class Player_Move : MonoBehaviour
         move_SlideTimer += Time.deltaTime / move_SlideTimer;
 
         float value = Mathf.Lerp(target.magnitude, 2, lerpProb);
-        
 
         //ダッシュ
         if (target.sqrMagnitude >0 && Input.GetButton("LB")||target.sqrMagnitude >0 && Input.GetKey(KeyCode.LeftShift))
@@ -112,7 +118,7 @@ public class Player_Move : MonoBehaviour
         }
         else
         {
-            anim.SetFloat("Sword_Blend", target.magnitude * 0.95f );
+            anim.SetFloat("Sword_Blend", target.magnitude * 0.3f );
             dash = false;
             rolling = false;
         }

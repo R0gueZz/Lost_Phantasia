@@ -7,11 +7,12 @@ TagManager:
   - Ground
   - Blade
   - Boss
+  - BossAttack
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Flare
   - Water
   - UI
   - 
