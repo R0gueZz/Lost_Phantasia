@@ -163,7 +163,8 @@ public class Player_Move : Player_Status
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") ||
            anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") ||
-           anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
+           anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3")||
+           anim.GetCurrentAnimatorStateInfo(0).IsName("Attack4"))       
         {
             anim.SetFloat("Sword_Blend", 0);
             do_move = false;

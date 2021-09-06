@@ -77,17 +77,18 @@ public class Player_SwordAttack : MonoBehaviour
         Vector3 force = gameObject.transform.rotation * new Vector3(0, 0, Attack_Speed[1]);
         rb.AddForce(force, ForceMode.Impulse);
     }
+
     void Attack_Start3()
     {
         nowAttack = true;
-        Vector3 force = gameObject.transform.rotation * new Vector3(0, 0, Attack_Speed[2]);
+        Vector3 force = gameObject.transform.rotation * new Vector3(0, 0, Attack_Speed[3]);
         rb.AddForce(force, ForceMode.Impulse);
     }
 
     void Attack_Start4()
     {
         nowAttack = true;
-        Vector3 force = gameObject.transform.rotation * new Vector3(0, 0, Attack_Speed[3]);
+        Vector3 force = gameObject.transform.rotation * new Vector3(0, 0, Attack_Speed[2]);
         rb.AddForce(force, ForceMode.Impulse);
     }
     #endregion
@@ -126,15 +127,15 @@ public class Player_SwordAttack : MonoBehaviour
     {
         slash_Effects[1].Play();
     }
-    
+
     void Effect_Start3()
     {
-        slash_Effects[2].Play();
+        slash_Effects[3].Play();
     }
 
     void Effect_Start4()
     {
-        slash_Effects[3].Play();
+        slash_Effects[2].Play();
     }
     #endregion
 }
