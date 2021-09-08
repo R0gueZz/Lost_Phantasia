@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Move : Player_Status
 {
@@ -118,7 +119,7 @@ public class Player_Move : Player_Status
         }
         else
         {
-            anim.SetFloat("Sword_Blend", target.magnitude * 0.3f );
+            anim.SetFloat("Sword_Blend", target.magnitude);
             dash = false;
             rolling = false;
         }
@@ -132,7 +133,7 @@ public class Player_Move : Player_Status
             return;
         }
         else if (grounded && Input.GetKeyDown(KeyCode.Space) && !rolling
-            ||Input.GetButtonDown("Jump")&& grounded && !rolling)
+            ||Input.GetButtonDown("Jump") && grounded && !rolling)
         {
             this.rb.AddForce(transform.up * this.jumpForce,ForceMode.Impulse);
             anim.SetBool("Jump", true);

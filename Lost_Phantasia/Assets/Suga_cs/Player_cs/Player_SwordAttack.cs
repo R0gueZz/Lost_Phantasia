@@ -12,7 +12,7 @@ public class Player_SwordAttack : MonoBehaviour
     ParticleSystem[] slash_Effects;
 
     //攻撃判定
-    private bool nowAttack = false;
+    public static bool nowAttack = false;
 
     //アタック時の移動
     [Header("攻撃時の移動力")]
