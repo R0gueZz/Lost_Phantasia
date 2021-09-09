@@ -27,6 +27,10 @@ public class Player_SwordAttack : MonoBehaviour
 
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         Sword_Attack();
     }
 

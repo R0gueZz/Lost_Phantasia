@@ -10,13 +10,14 @@ public class Player_Status : MonoBehaviour
 
     [Header("HPÉoÅ[")]
     [SerializeField]
-    Slider hpBar;
+    Slider[] hpBar;
+
     // Start is called before the first frame update
     void Start()
     {
         maxHp = 100;
         hp = maxHp;
-        hpBar.value = 1;
+        hpBar[0].value = 1;
     }
 
     // Update is called once per frame
@@ -31,7 +32,7 @@ public class Player_Status : MonoBehaviour
         {
             hp = hp - 10f;
 
-            hpBar.value = (float)hp / (float)maxHp;
+            hpBar[0].value = (float)hp / (float)maxHp;
         }
     }
 

@@ -53,6 +53,10 @@ public class Player_Move : Player_Status
 
     private void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         Effecter();
         Jump();
         Avoidance();
