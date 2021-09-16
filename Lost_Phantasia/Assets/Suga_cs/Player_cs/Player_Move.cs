@@ -94,6 +94,7 @@ public class Player_Move : Player_Status
         target.x = Mathf.Lerp(0, target.x, move_SlideTimer);
 
         move_SlideTimer += Time.deltaTime / move_SlideTimer;
+        move_SlideTimer = Mathf.Clamp(move_SlideTimer, 0, 1);
 
         float value = Mathf.Lerp(target.magnitude, 2, lerpProb);
 

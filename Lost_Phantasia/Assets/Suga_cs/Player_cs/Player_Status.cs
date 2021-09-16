@@ -27,7 +27,7 @@ public class Player_Status : MonoBehaviour
     }
 
     void Damage()
-    {
+    {   
         if(Input.GetKeyDown(KeyCode.P))
         {
             hp = hp - 10f;

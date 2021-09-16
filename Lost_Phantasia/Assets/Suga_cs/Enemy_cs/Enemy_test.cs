@@ -10,6 +10,8 @@ public class Enemy_test : MonoBehaviour
     float maxHp;
     float currentHp;
 
+    float dmg = 25f;
+
     [Header("プレイヤー")]
     [SerializeField]
     GameObject player;
@@ -21,6 +23,10 @@ public class Enemy_test : MonoBehaviour
     [Header("HPバー")]
     [SerializeField]
     Slider hpBar;
+
+    [Header("ダメージ")]
+    [SerializeField]
+    Text dmgText;
 
     // Start is called before the first frame update
     void Start()
@@ -42,22 +48,21 @@ public class Enemy_test : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if(other.gameObject.CompareTag("Blade") && Player_SwordAttack.nowAttack)
         {
-            currentHp = currentHp - 10f;
+            currentHp = currentHp - dmg;
 
             if(player.gameObject.transform.position.x < this.gameObject.transform.position.x)
             {
-                rb.AddForce(-transform.forward * knockForce[0], ForceMode.Impulse);
+                rb.AddForce(-transform.forward * knockForce[0], ForceMode.VelocityChange);
             }
 
             else if(player.gameObject.transform.position.x > this.gameObject.transform.position.x)
             {
-                rb.AddForce(transform.forward * knockForce[0], ForceMode.Impulse);
+                rb.AddForce(transform.forward * knockForce[0], ForceMode.VelocityChange);
             }
 
-            rb.AddForce(transform.up * knockForce[1], ForceMode.Impulse);
+            rb.AddForce(transform.up * knockForce[1], ForceMode.VelocityChange);
 
             hpBar.value = (float)currentHp / (float)maxHp;
         }

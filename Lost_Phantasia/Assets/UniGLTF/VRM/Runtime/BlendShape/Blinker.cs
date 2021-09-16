@@ -8,7 +8,7 @@ namespace VRM
     /// VRMBlendShapeProxy によるランダムに瞬きするサンプル。
     /// VRMBlendShapeProxy のある GameObject にアタッチする。
     /// </summary>
-    public class Blinker : MonoBehaviour
+  public class Blinker : MonoBehaviour
     {
         VRMBlendShapeProxy m_blendShapes;
 

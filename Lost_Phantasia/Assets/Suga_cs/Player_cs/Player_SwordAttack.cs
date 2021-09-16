@@ -44,20 +44,6 @@ public class Player_SwordAttack : MonoBehaviour
         }
     }
 
-    void Attack()
-    {
-        //攻撃
-        Debug.Log("Hit");
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("Boss")&& nowAttack)
-        {
-            Attack();
-        }
-    }
-
     //アタック時の移動量
     #region
     void Attack_Start1()
