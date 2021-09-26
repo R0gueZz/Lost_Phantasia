@@ -68,6 +68,10 @@ public class GameManager : MonoBehaviour
                 DemoPause.isSelect = false;
                 sceneChange2();
             }
+            if(Input.GetKeyDown(KeyCode.C))
+            {
+                sceneChange3();
+            }
         }
     }
 
@@ -83,6 +87,13 @@ public class GameManager : MonoBehaviour
         fadeCanvas.GetComponent<FadeManager>().fadeOut();
         await Task.Delay(1000);
         SceneManager.LoadScene("Title");
+    }
+
+    async void sceneChange3()
+    {
+        fadeCanvas.GetComponent<FadeManager>().fadeOut();
+        await Task.Delay(1000);
+        SceneManager.LoadScene("Clear");
     }
 
 

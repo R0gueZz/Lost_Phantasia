@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/suga_Scenes/Player_Scene.unity
     guid: 64afb62ace91dcc4ea10cb3705ce1406
+  - enabled: 1
+    path: Assets/suga_Scenes/Clear.unity
+    guid: faec81288d927234cae041460fdd05d3
   m_configObjects: {}

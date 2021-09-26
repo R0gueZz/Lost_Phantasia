@@ -20,7 +20,7 @@ public class Attack_Reset : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator anim, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (stateInfo.IsName("Attack3"))
+        if (stateInfo.IsName("Attack4"))
         {
             anim.ResetTrigger("Attack");
         }

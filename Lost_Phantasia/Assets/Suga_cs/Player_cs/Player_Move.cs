@@ -63,7 +63,6 @@ public class Player_Move : Player_Status
         {
             return;
         }
-        CheckGround();
         Effecter();
         Jump();
         Avoidance();
@@ -73,12 +72,6 @@ public class Player_Move : Player_Status
         Avoid_Search();
         Attack_Search();
         Move();
-    }
-
-    //接地判定
-    void CheckGround()
-    {
-
     }
 
     //エフェクト管理
@@ -111,7 +104,7 @@ public class Player_Move : Player_Status
         move_SlideTimer = Mathf.Clamp(move_SlideTimer, 0, 1);
 
         //ダッシュ
-        if (target.sqrMagnitude >0 && Input.GetButton("LB")||target.sqrMagnitude >0 && Input.GetKey(KeyCode.LeftShift))
+        if (target.sqrMagnitude >0 && Input.GetButton("LB"))
         {
             lerpProb += Time.deltaTime / lerpDuration;
             lerpProb = Mathf.Clamp(lerpProb, 0, 1);
@@ -149,8 +142,7 @@ public class Player_Move : Player_Status
         {
             return;
         }
-        else if (grounded && Input.GetKeyDown(KeyCode.Space) && !rolling
-            ||Input.GetButtonDown("Jump") && grounded && !rolling)
+        else if (Input.GetButtonDown("Jump") && grounded && !rolling)
         {
             audioSource.PlayOneShot(sound1);
             this.rb.AddForce(transform.up * this.jumpForce,ForceMode.Impulse);
@@ -166,8 +158,7 @@ public class Player_Move : Player_Status
         {
             return;
         }
-        else if (avoid && grounded && Input.GetKeyDown(KeyCode.W) 
-            ||avoid && grounded && Input.GetButtonDown("RB"))
+        else if (avoid && grounded && Input.GetButtonDown("RB"))
         {
             rolling = true;
             dash = false;
