@@ -12,6 +12,7 @@ public class Boss : EnemyBase
         JumpAttack,
         Dead
     }
+    float Fps = 400;
 
     Rigidbody rb;
     Animator animator;
@@ -43,9 +44,22 @@ public class Boss : EnemyBase
     }
 
     float tmp;
+    int frameCount = 0;
+    float prevTime = 0;
     void Update()
     {
-        
+       
+        ++frameCount;
+        float time = Time.realtimeSinceStartup - prevTime;
+
+        if (time >= 0.5f)
+        {
+            Debug.LogFormat("{0}fps", frameCount / time);
+            Fps = frameCount / time;
+
+            frameCount = 0;
+            prevTime = Time.realtimeSinceStartup;
+        }
     }
     private void OnGUI()
     {
@@ -63,7 +77,6 @@ public class Boss : EnemyBase
         if (Vector3.Distance(transform.position,Player.transform.position) > 8)
         {
             StartCoroutine(Move());
-            Debug.Log(Vector3.Distance(transform.position, Player.transform.position) );
             yield break;
         }
         tmp = Random.RandomRange(0, 10001) % 100;
@@ -75,7 +88,10 @@ public class Boss : EnemyBase
         {
             state = (int)BossActionPattern.Stay;
             animator.SetInteger("State", state);
-            yield return new WaitForSeconds(0.5f);
+            for(int i = 0; i < Fps * 0.5f; i++)
+            {
+                yield return null;
+            }
 
             StartCoroutine(JumpAttack());
         }
@@ -83,8 +99,10 @@ public class Boss : EnemyBase
         {
             state = (int)BossActionPattern.Stay;
             animator.SetInteger("State", state);
-            yield return new WaitForSeconds(0.5f);
-
+            for (int i = 0; i < Fps * 0.5f; i++)
+            {
+                yield return null;
+            }
             StartCoroutine(BodyBlow());
         }
         yield break;
@@ -121,13 +139,15 @@ public class Boss : EnemyBase
 
         state = (int)BossActionPattern.Stay;
         animator.SetInteger("State", state);
-        yield return null;
+        for (int i = 0; i < Fps * 0.5f; i++)
+        {
+            yield return null;
+        }
         StartCoroutine(ActionSet());
         yield break;
     }
 
-    WaitForSeconds jumpWait = new WaitForSeconds(2f);
-    WaitForSeconds shockWaveTime = new WaitForSeconds(1f);
+
     RaycastHit raycastHit;
     IEnumerator JumpAttack()
     {
@@ -139,7 +159,10 @@ public class Boss : EnemyBase
         state = (int)BossActionPattern.JumpAttack;
         animator.SetInteger("State", state);
         rb.AddForce(0, 10, 0, ForceMode.Impulse);
-        yield return jumpWait;
+        for (int i = 0; i < Fps * 2f; i++)
+        {
+            yield return null;
+        }
         LookPlayer();
         if (!ismove)
         {
@@ -153,7 +176,10 @@ public class Boss : EnemyBase
             yield break;
         }
         shockWave.SetActive(true);
-        yield return shockWaveTime;
+        for (int i = 0; i < Fps * 1f; i++)
+        {
+            yield return null;
+        }
 
         if (!ismove)
         {
@@ -162,7 +188,10 @@ public class Boss : EnemyBase
         shockWave.SetActive(false);
         state = (int)BossActionPattern.Stay;
         animator.SetInteger("State", state);
-        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < Fps * 1; i++)
+        {
+            yield return null;
+        }
         LookPlayer();
         if (!ismove)
         {
@@ -182,7 +211,10 @@ public class Boss : EnemyBase
         }
         state = (int)BossActionPattern.BodyBlow;
         animator.SetInteger("State", state);
-        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < Fps * 2; i++)
+        {
+            yield return null;
+        }
 
         if (!ismove)
         {
@@ -190,7 +222,10 @@ public class Boss : EnemyBase
         }
         rb.AddForce(transform.right * 7, ForceMode.Impulse);
         BodyBlowDecision.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < Fps * 1; i++)
+        {
+            yield return null;
+        }
 
         if (!ismove)
         {
@@ -199,7 +234,10 @@ public class Boss : EnemyBase
         BodyBlowDecision.SetActive(false);
         state = (int)BossActionPattern.Stay;
         animator.SetInteger("State", state);
-        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < Fps * 1; i++)
+        {
+            yield return null;
+        }
 
         if (!ismove)
         {
@@ -207,8 +245,8 @@ public class Boss : EnemyBase
         }
         
         StartCoroutine(ActionSet());
-        yield break;
         LookPlayer();
+        yield break;
 
     }
 
@@ -231,7 +269,6 @@ public class Boss : EnemyBase
 
     void LookPlayer()
     {
-        Debug.Log(transform.position.x - Player.transform.position.x);
         transform.LookAt(Player.transform.position);
         transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y - 90, 0);
         
@@ -244,11 +281,11 @@ public class Boss : EnemyBase
         {
             if(state == (int)BossActionPattern.BodyBlow)
             {
-                Debug.Log("BodyBlowHit");
+                
             }
             if(state == (int)BossActionPattern.JumpAttack)
             {
-                Debug.Log("JumpAttackHit");
+                
             }
             
         }

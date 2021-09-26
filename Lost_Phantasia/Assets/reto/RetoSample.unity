@@ -541,7 +541,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2668532069583936400, guid: c2faf89200a727349a89b0c1850b88be, type: 3}
       propertyPath: m_Name
-      value: Boss3
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 2668532069583936402, guid: c2faf89200a727349a89b0c1850b88be, type: 3}
       propertyPath: m_Materials.Array.data[0]

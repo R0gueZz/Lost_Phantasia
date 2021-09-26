@@ -9,7 +9,6 @@ public class EnemyBase : MonoBehaviour
 
     virtual public void Damege (float damege )
     {
-        Debug.Log("BossDamege");
         Hp -= damege;
         if(Hp <= 0)
         {
@@ -21,6 +20,7 @@ public class EnemyBase : MonoBehaviour
     {
         ismove = true;
         gameObject.SetActive(false);
-        Debug.Log("dead");
+
+
     }
 }
