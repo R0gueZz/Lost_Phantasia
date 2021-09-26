@@ -7,7 +7,7 @@ public class Player_SE : MonoBehaviour
     AudioSource source; 
 
     [SerializeField]
-    AudioClip seClip;
+    AudioClip[] seClip;
 
     //足音のランダムなピッチ
     float pitchRange = 0.1f;
@@ -28,13 +28,38 @@ public class Player_SE : MonoBehaviour
     {
         source.pitch = 1.0f + Random.Range(-pitchRange, pitchRange);
 
-        source.PlayOneShot(seClip);
+        source.PlayOneShot(seClip[0]);
     }
 
     void FootStep_L()
     {
         source.pitch = 1.0f + Random.Range(-pitchRange, pitchRange);
 
-        source.PlayOneShot(seClip);
+        source.PlayOneShot(seClip[0]);
+    }
+
+    void Rolling_se()
+    {
+        source.PlayOneShot(seClip[1]);
+    }
+
+    void Attack1_se()
+    {
+        source.PlayOneShot(seClip[2]);
+    }
+    
+    void Attack2_se()
+    {
+        source.PlayOneShot(seClip[3]);
+    }
+    
+    void Attack3_se()
+    {
+        source.PlayOneShot(seClip[4]);
+    } 
+    
+    void Attack4_se()
+    {
+        source.PlayOneShot(seClip[5]);
     }
 }

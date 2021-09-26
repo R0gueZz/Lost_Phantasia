@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/suga_Scenes/Player_Scene.unity
-    guid: 64afb62ace91dcc4ea10cb3705ce1406
-  - enabled: 0
     path: Assets/suga_Scenes/Title.unity
     guid: c78150ee97093ff42a3745bf373be00d
+  - enabled: 1
+    path: Assets/suga_Scenes/Player_Scene.unity
+    guid: 64afb62ace91dcc4ea10cb3705ce1406
   m_configObjects: {}

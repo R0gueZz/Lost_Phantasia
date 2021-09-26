@@ -8,6 +8,8 @@ TagManager:
   - Blade
   - Boss
   - BossAttack
+  - Fade
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - Flare
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Ground
   - 
   - 
   - 

@@ -87,7 +87,7 @@ public class GhostShadow : MonoBehaviour
                 MeshRenderer meshRen = go.AddComponent<MeshRenderer>();
                 meshRen.material = meshRender[i].material;
                 meshRen.material.shader = ghostShader;
-                meshRen.material.SetFloat("_Pow", 2.0f);
+                meshRen.material.SetFloat("_Pow", 1.0f);
                 shadowColor.a = 1;
                 meshRen.material.SetColor("_GhostColor", shadowColor);
 

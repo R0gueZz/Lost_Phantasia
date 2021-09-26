@@ -10,7 +10,9 @@ public class Enemy_test : MonoBehaviour
     float maxHp;
     float currentHp;
 
-    float dmg = 25f;
+    [Header("ダメージ")]
+    [SerializeField]
+    float dmg = 12.5f;
 
     [Header("プレイヤー")]
     [SerializeField]
@@ -23,10 +25,6 @@ public class Enemy_test : MonoBehaviour
     [Header("HPバー")]
     [SerializeField]
     Slider hpBar;
-
-    [Header("ダメージ")]
-    [SerializeField]
-    Text dmgText;
 
     // Start is called before the first frame update
     void Start()

@@ -7,6 +7,10 @@ public class Player_Move : Player_Status
 {
     Rigidbody rb;
     Animator anim;
+    AudioSource audioSource;
+
+    [SerializeField]
+    AudioClip sound1;
 
     [Header("通常時のスピード")]
     [SerializeField]
@@ -44,11 +48,13 @@ public class Player_Move : Player_Status
     static public bool grounded;
     static public bool rolling = false;
     static public bool dash = false;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -57,6 +63,7 @@ public class Player_Move : Player_Status
         {
             return;
         }
+        CheckGround();
         Effecter();
         Jump();
         Avoidance();
@@ -66,6 +73,12 @@ public class Player_Move : Player_Status
         Avoid_Search();
         Attack_Search();
         Move();
+    }
+
+    //接地判定
+    void CheckGround()
+    {
+
     }
 
     //エフェクト管理
@@ -90,13 +103,12 @@ public class Player_Move : Player_Status
         
         Vector3 target = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
 
+        float value = Mathf.Lerp(target.magnitude, 2, lerpProb);
         //補間
         target.x = Mathf.Lerp(0, target.x, move_SlideTimer);
 
         move_SlideTimer += Time.deltaTime / move_SlideTimer;
         move_SlideTimer = Mathf.Clamp(move_SlideTimer, 0, 1);
-
-        float value = Mathf.Lerp(target.magnitude, 2, lerpProb);
 
         //ダッシュ
         if (target.sqrMagnitude >0 && Input.GetButton("LB")||target.sqrMagnitude >0 && Input.GetKey(KeyCode.LeftShift))
@@ -124,7 +136,7 @@ public class Player_Move : Player_Status
         }
         else
         {
-            anim.SetFloat("Sword_Blend", target.magnitude);
+            anim.SetFloat("Sword_Blend",target.magnitude);
             dash = false;
             rolling = false;
         }
@@ -140,6 +152,7 @@ public class Player_Move : Player_Status
         else if (grounded && Input.GetKeyDown(KeyCode.Space) && !rolling
             ||Input.GetButtonDown("Jump") && grounded && !rolling)
         {
+            audioSource.PlayOneShot(sound1);
             this.rb.AddForce(transform.up * this.jumpForce,ForceMode.Impulse);
             anim.SetBool("Jump", true);
             grounded = false;

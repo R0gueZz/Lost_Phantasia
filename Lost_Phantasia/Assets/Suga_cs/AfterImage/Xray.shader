@@ -1,4 +1,4 @@
-
+	
 // X-ray effect
 Shader "Custom/Xray"
 {
@@ -61,7 +61,7 @@ Shader "Custom/Xray"
 		o.Albedo = _GhostColor.rgb;
 
 		// set the edge to 1
-	   half alpha_XRay = 1.0 - saturate(dot(normalize(IN.viewDir), worldNormal));
+	   half alpha_XRay = 1.0f - saturate(dot(normalize(IN.viewDir), worldNormal));
 	   // Adjust the effect of X-Ray
 	  alpha_XRay = pow(alpha_XRay, _Pow);
 	  
