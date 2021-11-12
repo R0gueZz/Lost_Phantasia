@@ -10,6 +10,9 @@ public class Enemy_test : MonoBehaviour
     float maxHp;
     float currentHp;
 
+    [SerializeField]
+    GameObject sounds;
+
     [Header("É_ÉÅÅ[ÉW")]
     [SerializeField]
     float dmg = 12.5f;
@@ -26,6 +29,9 @@ public class Enemy_test : MonoBehaviour
     [SerializeField]
     Slider hpBar;
 
+    [SerializeField]
+    GameObject destroyEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,8 +46,18 @@ public class Enemy_test : MonoBehaviour
     {
         if(currentHp <= 0)
         {
+            EffectPlay();
             gameObject.SetActive(false);
         }
+    }
+
+    void EffectPlay()
+    {
+        GameObject effect = Instantiate(destroyEffect);
+        GameObject sound = Instantiate(sounds);
+
+        sound.transform.position = gameObject.transform.position;
+        effect.transform.position = gameObject.transform.position;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -10,6 +10,7 @@ TagManager:
   - BossAttack
   - Fade
   - Wall
+  - End
   layers:
   - Default
   - TransparentFX

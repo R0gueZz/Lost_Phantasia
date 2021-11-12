@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Invoke("findFadeObj", 0.02f);
-        audioSource = GetComponent<AudioSource>();  
+        audioSource = GetComponent<AudioSource>(); 
     }
 
     void findFadeObj()
@@ -68,9 +68,18 @@ public class GameManager : MonoBehaviour
                 DemoPause.isSelect = false;
                 sceneChange2();
             }
-            if(Input.GetKeyDown(KeyCode.C))
+            if(GameC.isClear)
             {
                 sceneChange3();
+                GameC.isClear = false;
+            }
+        }
+        if(SceneManager.GetActiveScene().name == "Clear")
+        {
+            if(Input.GetButtonDown("Jump"))
+            {
+                audioSource.PlayOneShot(sounds[1]);
+                sceneChange2();
             }
         }
     }
