@@ -1,0 +1,643 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.11f1 (99c7afb366b3) revision 10078127'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19042.1288; Version 2009; 64bit' Language: 'ja' Physical Memory: 16227 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/harumichi/Documents/GitHub/Lost_Phantasia/Lost_Phantasia
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+50173
+Successfully changed project path to: C:/Users/harumichi/Documents/GitHub/Lost_Phantasia/Lost_Phantasia
+C:/Users/harumichi/Documents/GitHub/Lost_Phantasia/Lost_Phantasia
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 30.68 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.11f1 (99c7afb366b3)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/harumichi/Documents/GitHub/Lost_Phantasia/Lost_Phantasia/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f91)
+    Vendor:   
+    VRAM:     3962 MB
+    Driver:   27.21.14.6231
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56368
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.119513 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 33.61 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.299 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.669412 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.161 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1390 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 65.1 MB.
+System memory in use after: 65.1 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1825.
+Total: 1.876700 ms (FindLiveObjects: 0.177100 ms CreateObjectMapping: 0.056100 ms MarkObjects: 1.583300 ms  DeleteObjects: 0.059300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  requireTextureImportCompression: false -> true
+========================================================================
+Received Import Request.
+  path: Assets/reto/robot_metallic
+  artifactKey: Guid(a02b854d85079af43ba485e3e8074416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/robot_metallic using Guid(a02b854d85079af43ba485e3e8074416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adb5fc748cc0f0aaa882d77cddd8db33') in 0.009900 seconds
+  Import took 0.013103 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.951463 seconds.
+  path: Assets/reto/prefab/Boss.prefab
+  artifactKey: Guid(c2faf89200a727349a89b0c1850b88be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/prefab/Boss.prefab using Guid(c2faf89200a727349a89b0c1850b88be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5337d02330c1c0a53f6906d6725a275') in 0.138991 seconds
+  Import took 0.141786 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.210616 seconds.
+  path: Assets/reto/robot_metallic/prefab
+  artifactKey: Guid(a53c196539dbf1147ab3e60a7aaaafcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/robot_metallic/prefab using Guid(a53c196539dbf1147ab3e60a7aaaafcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab1b07f825d131463d4e6f2373a34060') in 0.007815 seconds
+  Import took 0.010416 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.382090 seconds.
+  path: Assets/reto/robot_metallic/prefab/robot_metallic.prefab
+  artifactKey: Guid(7db4fdf40e93e1f46bfd95dd54089326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/robot_metallic/prefab/robot_metallic.prefab using Guid(7db4fdf40e93e1f46bfd95dd54089326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '400c9be35ba9f9316e086ffdb350f45a') in 1.000179 seconds
+  Import took 1.025316 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.097572 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.900 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.7 MB.
+System memory in use after: 81.8 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1838.
+Total: 1.531300 ms (FindLiveObjects: 0.126300 ms CreateObjectMapping: 0.038700 ms MarkObjects: 1.348500 ms  DeleteObjects: 0.016800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  requireTextureImportCompression: false -> true
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004592 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.023 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.7 MB.
+System memory in use after: 81.8 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1841.
+Total: 1.816000 ms (FindLiveObjects: 0.149400 ms CreateObjectMapping: 0.047800 ms MarkObjects: 1.597900 ms  DeleteObjects: 0.020000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  requireTextureImportCompression: false -> true
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003733 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.948 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.26 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.7 MB.
+System memory in use after: 81.8 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1844.
+Total: 1.522700 ms (FindLiveObjects: 0.129400 ms CreateObjectMapping: 0.040400 ms MarkObjects: 1.338000 ms  DeleteObjects: 0.013800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  requireTextureImportCompression: false -> true
+========================================================================
+Received Import Request.
+  Time since last request: 611.649134 seconds.
+  path: Assets/reto/robot_metallic/mesh/robot_metallic.fbx
+  artifactKey: Guid(24f8d6aa660f9444ab0544d85c672e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/robot_metallic/mesh/robot_metallic.fbx using Guid(24f8d6aa660f9444ab0544d85c672e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa82298ccaf7e1d60c605b81be82090c') in 0.788044 seconds
+  Import took 0.808494 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.205143 seconds.
+  path: Assets/reto/robot_metallic/textures/robot_metallic_Albedo.png
+  artifactKey: Guid(e2279153f50d71441bf98cff30485499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/robot_metallic/textures/robot_metallic_Albedo.png using Guid(e2279153f50d71441bf98cff30485499) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03b157e691d86a386b19c6ca3e9f80a0') in 0.139269 seconds
+  Import took 0.145549 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/reto/robot_metallic/textures/robot_metallic_Emission.png
+  artifactKey: Guid(46531af70ab429047b9c5926748c66bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/robot_metallic/textures/robot_metallic_Emission.png using Guid(46531af70ab429047b9c5926748c66bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9833432e5394a55672e9905a156030c4') in 0.125502 seconds
+  Import took 0.131333 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/reto/robot_metallic/textures/robot_metallic_Normalmap.png
+  artifactKey: Guid(6e6d019a83aa22041be74a37bde0f1d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/robot_metallic/textures/robot_metallic_Normalmap.png using Guid(6e6d019a83aa22041be74a37bde0f1d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12d1dd0e39214ed44fec2cf921970af2') in 0.104779 seconds
+  Import took 0.111573 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/reto/robot_metallic/textures/robot_metallic_Metallic.png
+  artifactKey: Guid(6e3ca595f4a994747ab129a1a4b93e91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/robot_metallic/textures/robot_metallic_Metallic.png using Guid(6e3ca595f4a994747ab129a1a4b93e91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75712208dfe970c24bdb81fb3b0a9a0c') in 0.069649 seconds
+  Import took 0.075488 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/reto/robot_metallic/textures/robot_metallic_Occlusion.png
+  artifactKey: Guid(5f168b3b18a62c441bd76cfd0e734281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/robot_metallic/textures/robot_metallic_Occlusion.png using Guid(5f168b3b18a62c441bd76cfd0e734281) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7802a38612e3d5537af795cfa2c9e3ef') in 0.070798 seconds
+  Import took 0.077162 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.661509 seconds.
+  path: Assets/reto/robot_metallic/material/robot_metallic.mat
+  artifactKey: Guid(5c7407d2adf955d45bf09a96518e5856) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/robot_metallic/material/robot_metallic.mat using Guid(5c7407d2adf955d45bf09a96518e5856) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8ace3c96d7c2de4350f0e28af81219d') in 0.455811 seconds
+  Import took 0.474857 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 875.081980 seconds.
+  path: Assets/reto/Anim/TestJumpAttack.anim
+  artifactKey: Guid(1f09da2b2ae67f84ba0bb3c25fa6f89b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Anim/TestJumpAttack.anim using Guid(1f09da2b2ae67f84ba0bb3c25fa6f89b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4e9fb054713f6683ec9d89e5f73cc8d') in 0.010117 seconds
+  Import took 0.013177 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001375 seconds.
+  path: Assets/reto/Anim/TestJumpAttack.anim
+  artifactKey: Guid(1f09da2b2ae67f84ba0bb3c25fa6f89b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Anim/TestJumpAttack.anim using Guid(1f09da2b2ae67f84ba0bb3c25fa6f89b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4e9fb054713f6683ec9d89e5f73cc8d') in 0.002675 seconds
+  Import took 0.004917 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003675 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.895 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1887.
+Total: 1.546800 ms (FindLiveObjects: 0.130700 ms CreateObjectMapping: 0.039000 ms MarkObjects: 1.362900 ms  DeleteObjects: 0.013600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  requireTextureImportCompression: false -> true
+========================================================================
+Received Import Request.
+  Time since last request: 4025.289366 seconds.
+  path: Assets/reto/RetoSample.unity
+  artifactKey: Guid(323a56d41b22b6847a0e52cc22c35635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/RetoSample.unity using Guid(323a56d41b22b6847a0e52cc22c35635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c4163e6990a56a53347ab45f22ab9fc') in 0.032909 seconds
+  Import took 0.038781 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.399130 seconds.
+  path: Assets/reto/Kevin Iglesias
+  artifactKey: Guid(c6b170952ff69e14098dd35c398c720f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias using Guid(c6b170952ff69e14098dd35c398c720f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ec8d49674a5d0166ccc147c3eb7c1ad') in 0.006114 seconds
+  Import took 0.008653 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.734976 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions
+  artifactKey: Guid(2cb279c410b7a3e4dbf4aab42283effa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions using Guid(2cb279c410b7a3e4dbf4aab42283effa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8e576ef97b26abf89e199dd7b892e27') in 0.005587 seconds
+  Import took 0.009201 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.653222 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers
+  artifactKey: Guid(2772e80ca8ca2eb438c6fad54e343aca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers using Guid(2772e80ca8ca2eb438c6fad54e343aca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '118a4c1a46c9f8776a59b6e3b41430ed') in 0.005506 seconds
+  Import took 0.008140 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers
+  artifactKey: Guid(2772e80ca8ca2eb438c6fad54e343aca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers using Guid(2772e80ca8ca2eb438c6fad54e343aca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '118a4c1a46c9f8776a59b6e3b41430ed') in 0.002189 seconds
+  Import took 0.004315 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.731785 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers/BasicMotions@Idle.controller
+  artifactKey: Guid(a8555c0cff30527479e32562cef9141f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers/BasicMotions@Idle.controller using Guid(a8555c0cff30527479e32562cef9141f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8d2bf9e014ecd15a0bd8b03e30928d9') in 0.015981 seconds
+  Import took 0.018562 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.235623 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers/BasicMotions@Walk.controller
+  artifactKey: Guid(75d3a58b3d7879f41926561701407a48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers/BasicMotions@Walk.controller using Guid(75d3a58b3d7879f41926561701407a48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5916d353410a55aaec2c97b52cb7a9e5') in 0.006621 seconds
+  Import took 0.009529 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001098 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers/BasicMotions@Walk.controller
+  artifactKey: Guid(75d3a58b3d7879f41926561701407a48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers/BasicMotions@Walk.controller using Guid(75d3a58b3d7879f41926561701407a48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5916d353410a55aaec2c97b52cb7a9e5') in 0.003233 seconds
+  Import took 0.005779 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.228461 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers/BasicMotions@Run.controller
+  artifactKey: Guid(eb79e3fd0dd669f40a90a984b92a0ccf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers/BasicMotions@Run.controller using Guid(eb79e3fd0dd669f40a90a984b92a0ccf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1d9a5816ee65073d16e775e38364dde') in 0.007749 seconds
+  Import took 0.011419 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.041913 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Animations
+  artifactKey: Guid(7eb11f9df068c2b45bc52cfc0d6e3f25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Animations using Guid(7eb11f9df068c2b45bc52cfc0d6e3f25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b64db3196c89a4c0679f4d08a0d41deb') in 0.007031 seconds
+  Import took 0.009223 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.750386 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Animations/Idles
+  artifactKey: Guid(99b531c8964d97245a8f67495e2a1a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Animations/Idles using Guid(99b531c8964d97245a8f67495e2a1a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cb614fcbdc851d950ae5b7bde250f6b') in 0.005501 seconds
+  Import took 0.008466 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.055322 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Animations/Idles/BasicMotions@Idle01.fbx
+  artifactKey: Guid(a3422ad278cd9a94aa3da8e6bff9deea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Animations/Idles/BasicMotions@Idle01.fbx using Guid(a3422ad278cd9a94aa3da8e6bff9deea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92c0308a8cb8aaaf328862b01a07c19e') in 0.024536 seconds
+  Import took 0.026993 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Animations/Idles/BasicMotions@Idle02.fbx
+  artifactKey: Guid(69d59c13a83a7c74a8cc0607ded391ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Animations/Idles/BasicMotions@Idle02.fbx using Guid(69d59c13a83a7c74a8cc0607ded391ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b851990bb8c99d721133bacf2b7894e2') in 0.010320 seconds
+  Import took 0.012797 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.062056 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement
+  artifactKey: Guid(162d3c986ae81044b8e9de5caae05de1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement using Guid(162d3c986ae81044b8e9de5caae05de1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fe79483b141b36c9b5f071b58c47bf6') in 0.006674 seconds
+  Import took 0.009432 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.030432 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Jump01.fbx
+  artifactKey: Guid(067cc188e25b78b4a940a9fa67cd6ee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Jump01.fbx using Guid(067cc188e25b78b4a940a9fa67cd6ee7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8af8d076280d6c9a7470e79d2a2a79b') in 0.010671 seconds
+  Import took 0.013315 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Walk01 [RM].fbx
+  artifactKey: Guid(bd1c2e9064da28e4fb0fe4a3f6ff4e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Walk01 [RM].fbx using Guid(bd1c2e9064da28e4fb0fe4a3f6ff4e33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e37eeb62dbeebcb37bc8dbce465972b7') in 0.012528 seconds
+  Import took 0.015314 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Walk01.fbx
+  artifactKey: Guid(0536f044bd409ff419dd726bc69d2676) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Walk01.fbx using Guid(0536f044bd409ff419dd726bc69d2676) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd741838ae9387de234d9406a2b0fafee') in 0.013947 seconds
+  Import took 0.017039 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Run01 [RM].fbx
+  artifactKey: Guid(154a724602422044c91070a5f3c67c11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Run01 [RM].fbx using Guid(154a724602422044c91070a5f3c67c11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7751194a1dceb91e7c6876bf911f3b95') in 0.012256 seconds
+  Import took 0.015091 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Sprint01 [RM].fbx
+  artifactKey: Guid(7eebd174ff53112419b27f9d903573d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Sprint01 [RM].fbx using Guid(7eebd174ff53112419b27f9d903573d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0334d9cc33329ba1c2bfb5cd9c11c1a2') in 0.011470 seconds
+  Import took 0.014052 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Sprint01.fbx
+  artifactKey: Guid(98d8219075968bd43b75fdba6b4463d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Sprint01.fbx using Guid(98d8219075968bd43b75fdba6b4463d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0dde2377dc86c60346c648aba1d9b7be') in 0.010874 seconds
+  Import took 0.013642 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Run01.fbx
+  artifactKey: Guid(46d5b47e60163f148ada32ff97c7aa32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Animations/Movement/BasicMotions@Run01.fbx using Guid(46d5b47e60163f148ada32ff97c7aa32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7ecd9a3437dfd7635463aeebe894fd7') in 0.011947 seconds
+  Import took 0.014790 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.507628 seconds.
+  path: Assets/reto/Anim/Animator
+  artifactKey: Guid(18a6796613773cd41ba4bc73eb961215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Anim/Animator using Guid(18a6796613773cd41ba4bc73eb961215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b604c9f19a9b2f4e6feb20dec7360e90') in 0.005492 seconds
+  Import took 0.007815 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.119011 seconds.
+  path: Assets/reto/Anim/Animator/Boss.controller
+  artifactKey: Guid(9133879404f26054fb9271caf026bbcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Anim/Animator/Boss.controller using Guid(9133879404f26054fb9271caf026bbcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '592ef6daa1636ee2ea2886c5e45f2404') in 0.002607 seconds
+  Import took 0.004682 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.340482 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Materials
+  artifactKey: Guid(c662af2c1e85adc41b3fc5e08da4edd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Materials using Guid(c662af2c1e85adc41b3fc5e08da4edd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78f190fe73af14bdba66ff7893444c07') in 0.007753 seconds
+  Import took 0.010608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.362777 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Models
+  artifactKey: Guid(c310a300a0358f94f81e0eeb585d6cf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Models using Guid(c310a300a0358f94f81e0eeb585d6cf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81fc63e724983ddebb1f8b0b1f1b464b') in 0.005659 seconds
+  Import took 0.008828 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.373070 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Prefabs
+  artifactKey: Guid(09f81d62173a5e740ac94844bbe0316e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Prefabs using Guid(09f81d62173a5e740ac94844bbe0316e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23a032d645e1203e4760f3d65b7ac8d3') in 0.022665 seconds
+  Import took 0.024765 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 37.383795 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Models/BasicMotionsDummyModel.fbx
+  artifactKey: Guid(5917c0e93d180a842b61d1ebc62a195c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Models/BasicMotionsDummyModel.fbx using Guid(5917c0e93d180a842b61d1ebc62a195c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a267e25800edbd51c447be15107faf04') in 0.072127 seconds
+  Import took 0.074708 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 68.456696 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Textures
+  artifactKey: Guid(814c701abdfcecd4d944ab1fa1eff14d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Textures using Guid(814c701abdfcecd4d944ab1fa1eff14d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c036654027590e0e8fe33ed02ad5394') in 0.006082 seconds
+  Import took 0.008962 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.594049 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Materials/BasicMotionsFloor.mat
+  artifactKey: Guid(02490f38574ec9541a91585b214de9f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Materials/BasicMotionsFloor.mat using Guid(02490f38574ec9541a91585b214de9f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '190333b16238bfaa1fe9e1031cd434cb') in 0.025144 seconds
+  Import took 0.027679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/Materials/BasicMotionsMaterial.mat
+  artifactKey: Guid(ccc50d631d14df84a982c4f4acd00013) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/Materials/BasicMotionsMaterial.mat using Guid(ccc50d631d14df84a982c4f4acd00013) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '874d0523420dfef274515930387bdd83') in 0.142754 seconds
+  Import took 0.145113 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003881 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.990 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.6 MB.
+System memory in use after: 82.7 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1892.
+Total: 1.682600 ms (FindLiveObjects: 0.143200 ms CreateObjectMapping: 0.046400 ms MarkObjects: 1.470400 ms  DeleteObjects: 0.021800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  requireTextureImportCompression: false -> true
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004034 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.975 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.6 MB.
+System memory in use after: 82.7 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1895.
+Total: 2.339200 ms (FindLiveObjects: 0.204600 ms CreateObjectMapping: 0.066800 ms MarkObjects: 2.042500 ms  DeleteObjects: 0.023900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  requireTextureImportCompression: false -> true
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003833 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.075 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.6 MB.
+System memory in use after: 82.7 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1898.
+Total: 1.716500 ms (FindLiveObjects: 0.135600 ms CreateObjectMapping: 0.039600 ms MarkObjects: 1.524900 ms  DeleteObjects: 0.015300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  requireTextureImportCompression: false -> true
+========================================================================
+Received Import Request.
+  Time since last request: 871.641400 seconds.
+  path: Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers/BasicMotions@Jump.controller
+  artifactKey: Guid(54ff599963ec97843ad4d4ddeeb61810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/reto/Kevin Iglesias/Basic Motions/AnimationControllers/BasicMotions@Jump.controller using Guid(54ff599963ec97843ad4d4ddeeb61810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9becf570860891508ec0cb015f73435f') in 0.022991 seconds
+  Import took 0.025960 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003886 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.936 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.6 MB.
+System memory in use after: 82.7 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1901.
+Total: 1.571200 ms (FindLiveObjects: 0.144900 ms CreateObjectMapping: 0.042200 ms MarkObjects: 1.369900 ms  DeleteObjects: 0.013100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  requireTextureImportCompression: false -> true
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003978 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.940 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.6 MB.
+System memory in use after: 82.7 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1904.
+Total: 1.566000 ms (FindLiveObjects: 0.141400 ms CreateObjectMapping: 0.038400 ms MarkObjects: 1.371800 ms  DeleteObjects: 0.013600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  requireTextureImportCompression: false -> true
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003972 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.922 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1384 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.6 MB.
+System memory in use after: 82.7 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1907.
+Total: 1.840900 ms (FindLiveObjects: 0.163900 ms CreateObjectMapping: 0.046500 ms MarkObjects: 1.610100 ms  DeleteObjects: 0.018900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  requireTextureImportCompression: false -> true
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
